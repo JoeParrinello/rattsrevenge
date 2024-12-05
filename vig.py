@@ -29,10 +29,15 @@ def decrypt_vigenere(msg, word):
         decrypted_text.append(decrypted_char)
     decrypt_word = "".join(decrypted_text)
     if bool(pattern.search(decrypt_word)):
-        print(f"Keyword: {word:8}, Decrypt: {decrypt_word}")
+        return f"Keyword: {word:8}, Decrypt: {decrypt_word}\n"
+    else:
+        return None
 
 cipher = "JYPFFQVY"
-for i in load_words():
-    decrypt_vigenere(cipher, i) 
+with open("output.txt", "w") as f: 
+    for i in load_words():
+        decrypted = decrypt_vigenere(cipher, i)
+        if decrypted is not None:
+            f.write(decrypted)
 
 

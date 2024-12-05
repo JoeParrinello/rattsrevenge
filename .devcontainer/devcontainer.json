@@ -1,0 +1,7 @@
+{
+	"name": "Default Linux Universal",
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {
+		"ghcr.io/mikaello/devcontainer-features/kotlinc:1": {}
+	}
+}
